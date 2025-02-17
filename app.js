@@ -5,7 +5,7 @@ const port = 3001
 const cors = require('cors')
 
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173', 'https://finefoods-antd-x81i-tawny.vercel.app'],
     credentials: true,
 })); // Enable CORS for all routes
 
