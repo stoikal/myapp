@@ -31,7 +31,7 @@ app.get('/auth/csrf-cookie', (req, res) => {
       expires: 'Mon, 17 Feb 2025 16:37:47 GMT'
     };
 
-    const cookieString = `XSRF-TOKEN=hellotoken; Max-Age=${cookieOptions.maxAge / 1000}; Path=${cookieOptions.path}; Secure; SameSite=${cookieOptions.sameSite};`;
+    const cookieString = `XSRF-TOKEN=hellotoken; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Path=${cookieOptions.path}; Secure; SameSite=${cookieOptions.sameSite};`;
     const cookieString2 = `MY-SESSION=session; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
     res.setHeader('Set-Cookie', [cookieString, cookieString2]);
 
