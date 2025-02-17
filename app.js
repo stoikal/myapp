@@ -31,8 +31,8 @@ app.get('/auth/csrf-cookie', (req, res) => {
       expires: 'Mon, 17 Feb 2025 16:37:47 GMT'
     };
 
-    const cookieString = `XSRF-TOKEN=hellotoken; domain=.onrender.com; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Path=${cookieOptions.path}; Secure; SameSite=${cookieOptions.sameSite};`;
-    const cookieString2 = `MY-SESSION=session; domain=.onrender.com; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
+    const cookieString = `XSRF-TOKEN=hellotoken; domain=https://onrender.com; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Path=${cookieOptions.path}; Secure; SameSite=${cookieOptions.sameSite};`;
+    const cookieString2 = `MY-SESSION=session; domain=https://onrender.com; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
     res.setHeader('Set-Cookie', [cookieString, cookieString2]);
 
     res.setHeader('Cache-Control', 'no-store');
