@@ -7,7 +7,9 @@ const cors = require('cors')
 app.use(cors({
     origin: ['https://finefoods-antd-blue.vercel.app', 'https://finefoods-antd-x81i-tawny.vercel.app', 'http://localhost:5173'],
     credentials: true,
-    allowedHeaders: ['x-xsrf-token', 'x-custom-header', 'authorization', 'content-type']
+    allowedHeaders: ['x-xsrf-token', 'x-custom-header', 'authorization', 'content-type'],
+    methods: ['GET', 'PUT', 'POST', 'OPTIONS', 'PATCH', 'DELETE'],
+    maxAge: 86400
 })); // Enable CORS for all routes
 
 app.get('/', (req, res) => {
