@@ -5,7 +5,7 @@ const port = 3002
 const cors = require('cors')
 
 app.use(cors({
-    origin: ['https://finefoods-antd-blue.vercel.app', 'https://finefoods-antd-x81i-tawny.vercel.app', 'http://localhost:5173', 'https://myapp-j2k0.onrender.com'],
+    origin: ['https://finefoods-antd-blue.vercel.app', 'https://finefoods-antd-x81i-tawny.vercel.app', 'http://localhost:5173', 'https://onrender.com'],
     credentials: true,
     allowedHeaders: ['Origin', 'Accept', 'X-Requested-With', 'x-xsrf-token', 'x-custom-header', 'authorization', 'Content-Type'],
     methods: 'GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS',
@@ -25,8 +25,8 @@ app.get('/auth/csrf-cookie', (req, res) => {
       expires: 'Mon, 17 Feb 2025 16:37:47 GMT'
     };
 
-    const cookieString = `XSRF-TOKEN=hellotoken; Max-Age=${cookieOptions.maxAge / 1000}; Path=${cookieOptions.path}; Partitioned; Secure; SameSite=${cookieOptions.sameSite};`;
-    const cookieString2 = `MY-SESSION=session; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Partitioned; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
+    const cookieString = `XSRF-TOKEN=hellotoken; Max-Age=${cookieOptions.maxAge / 1000}; Path=${cookieOptions.path}; Secure; SameSite=${cookieOptions.sameSite};`;
+    const cookieString2 = `MY-SESSION=session; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
     res.setHeader('Set-Cookie', [cookieString, cookieString2]);
 
     res.setHeader('Cache-Control', 'no-store');
