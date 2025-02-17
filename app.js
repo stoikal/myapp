@@ -13,7 +13,7 @@ app.use(cors({
        'https://finefoods-antd-et2l.onrender.com'
     ],
     credentials: true,
-    allowedHeaders: ['Origin', 'Accept', 'X-Requested-With', 'x-xsrf-token', 'x-custom-header', 'authorization', 'Content-Type'],
+    allowedHeaders: ['Origin', 'Accept', 'X-Requested-With', 'x-xsrf-token', 'x-custom-header', 'x-xsrf-pseudo', 'authorization', 'Content-Type'],
     methods: 'GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS',
     maxAge: 86400
 })); // Enable CORS for all routes
