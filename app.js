@@ -29,8 +29,8 @@ app.get('/auth/csrf-cookie', (req, res) => {
 
     res.setHeader('Cache-Control', 'no-store');
 
-    res.setHeader('Access-Control-Allow-Credentials', true)
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173')
+    // res.setHeader('Access-Control-Allow-Credentials', true)
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173')
     res.status(204).send();
   });
 
@@ -38,8 +38,8 @@ app.get('/auth/csrf-cookie', (req, res) => {
     // const myCookie = req.cookies.myCookie; // Requires cookie-parser middleware (see below)
     // const anotherCookie = req.cookies.anotherCookie;
     res.setHeader('Cache-Control', 'no-store');
-    res.setHeader('Access-Control-Allow-Credentials', true)
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173')
+    // res.setHeader('Access-Control-Allow-Credentials', true)
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173')
 
     res.status(204).send();
     // if (myCookie) {
