@@ -5,7 +5,13 @@ const port = 3002
 const cors = require('cors')
 
 app.use(cors({
-    origin: ['https://finefoods-antd-blue.vercel.app', 'https://finefoods-antd-x81i-tawny.vercel.app', 'http://localhost:5173', 'https://onrender.com'],
+    origin: [
+      'https://finefoods-antd-blue.vercel.app',
+      'https://finefoods-antd-x81i-tawny.vercel.app',
+      'http://localhost:5173',
+       'https://onrender.com',
+       'https://finefoods-antd-et2l.onrender.com'
+    ],
     credentials: true,
     allowedHeaders: ['Origin', 'Accept', 'X-Requested-With', 'x-xsrf-token', 'x-custom-header', 'authorization', 'Content-Type'],
     methods: 'GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS',
