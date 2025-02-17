@@ -1,14 +1,14 @@
 const express = require('express')
 const app = express()
-const port = 3001
+const port = 3002
 
 const cors = require('cors')
 
 app.use(cors({
     origin: ['https://finefoods-antd-blue.vercel.app', 'https://finefoods-antd-x81i-tawny.vercel.app', 'http://localhost:5173', 'https://myapp-j2k0.onrender.com'],
     credentials: true,
-    allowedHeaders: ['Origin', 'Accept', 'X-Requested-With', 'x-xsrf-token', 'x-custom-header', 'authorization', 'content-type'],
-    methods: ['GET', 'PUT', 'POST', 'OPTIONS', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Origin', 'Accept', 'X-Requested-With', 'x-xsrf-token', 'x-custom-header', 'authorization', 'Content-Type'],
+    methods: 'GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS',
     maxAge: 86400
 })); // Enable CORS for all routes
 
