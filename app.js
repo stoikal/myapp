@@ -20,14 +20,13 @@ app.get('/auth/csrf-cookie', (req, res) => {
     const cookieOptions = {
       maxAge: 7200000, // 24 hours in milliseconds
       httpOnly: true,
-      secure: false, // Set to true in production
-      sameSite: 'none', // Recommended for security
+      sameSite: 'None',
       path: '/',
       expires: 'Mon, 17 Feb 2025 16:37:47 GMT'
     };
 
-    const cookieString = `XSRF-TOKEN=hellotoken; Max-Age=${cookieOptions.maxAge / 1000}; Path=${cookieOptions.path}; Secure; SameSite=${cookieOptions.sameSite};`;
-    const cookieString2 = `MY-SESSION=session; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
+    const cookieString = `XSRF-TOKEN=hellotoken; Max-Age=${cookieOptions.maxAge / 1000}; Path=${cookieOptions.path}; Partitioned; Secure; SameSite=${cookieOptions.sameSite};`;
+    const cookieString2 = `MY-SESSION=session; Max-Age=${cookieOptions.maxAge / 1000}; HttpOnly; Partitioned; Secure; SameSite=${cookieOptions.sameSite}; Path=${cookieOptions.path}`;
     res.setHeader('Set-Cookie', [cookieString, cookieString2]);
 
     res.setHeader('Cache-Control', 'no-store');
